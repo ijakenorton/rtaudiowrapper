@@ -1,6 +1,5 @@
-//go:build ignore
 
-package main
+package rtaudiowrapper
 
 import (
 	"bufio"
@@ -28,6 +27,7 @@ var linuxBackends = []audioBackend{
 	{"PulseAudio", "libpulse", "__LINUX_PULSE__", []string{"-lpulse", "-lpulse-simple"}},
 	{"ALSA", "alsa", "__LINUX_ALSA__", []string{"-lasound"}},
 }
+
 
 func build() error {
 	switch runtime.GOOS {
